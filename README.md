@@ -1,4 +1,4 @@
-\# Finance Projects — Python
+# Finance Projects — Python
 
 
 
@@ -6,7 +6,7 @@ Market and portfolio analysis in Python, built step by step as part of a transit
 
 
 
-\## Goal
+## Goal
 
 
 
@@ -14,23 +14,23 @@ Build a documented, reproducible analytical toolkit: from raw market data to ris
 
 
 
-\## Tools
+## Tools
 
 
 
-\- Python
+- Python
 
-\- pandas, numpy
+- pandas, numpy
 
-\- yfinance (market data)
+- yfinance (market data)
 
-\- matplotlib (charts)
+- matplotlib (charts)
 
-\- JupyterLab
+- JupyterLab
 
 
 
-\## Notebooks
+## Notebooks
 
 
 
@@ -38,13 +38,13 @@ Build a documented, reproducible analytical toolkit: from raw market data to ris
 
 |---|----------|---------|
 
-| 01 | \*coming soon\* | Market data: returns, volatility, drawdown |
+| 01 | *coming soon* | Market data: returns, volatility, drawdown |
 
-| 02 | \*coming soon\* | Portfolio: diversification, Sharpe ratio, beta |
+| 02 | *coming soon* | Portfolio: diversification, Sharpe ratio, beta |
 
 
 
-\## Status
+## Status
 
 
 
