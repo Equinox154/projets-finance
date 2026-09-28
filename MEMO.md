@@ -64,7 +64,7 @@ winget install --id Python.Python.3.13 -e --source winget
 
 gh auth login
 
-gh repo clone Equinox154/projets-finance
+gh repo clone clement-buquet/projets-finance
 
 cd projets-finance
 
