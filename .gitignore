@@ -1,0 +1,17 @@
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Secrets (clés API, mots de passe)
+.env
+
+# Données brutes re-téléchargeables via yfinance
+data/raw/
+
+# Windows
+Thumbs.db
+desktop.ini
