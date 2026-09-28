@@ -99,6 +99,14 @@ La pire perte depuis un sommet sur toute la période.
 
 - **À retenir :** aucune mesure de risque ne suffit seule.
 
+### Corrélation
+Mesure à quel point deux actifs bougent ensemble, de −1 à +1.
+- +1 : ils montent et baissent toujours ensemble
+- 0 : aucun lien entre leurs mouvements
+- −1 : quand l'un monte, l'autre baisse
+- Code : `rendements.corr()`
+- **À retenir :** plus les corrélations d'un portefeuille sont faibles, plus le risque global baisse (exemple : glaces + parapluies).
+
 ---
 
 ## 4. Lecture de marché
