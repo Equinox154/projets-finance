@@ -107,6 +107,15 @@ Mesure à quel point deux actifs bougent ensemble, de −1 à +1.
 - Code : `rendements.corr()`
 - **À retenir :** plus les corrélations d'un portefeuille sont faibles, plus le risque global baisse (exemple : glaces + parapluies).
 
+### Diversification
+Combiner des actifs peu corrélés pour réduire le risque global sans réduire le rendement espéré.
+- Exemple : 4 titres à 25 % → volatilité 18,2 % contre 30,2 % en moyenne
+- **À retenir :** le risque d'un portefeuille est inférieur à la moyenne des risques, sauf si corrélation = 1. C'est le « seul repas gratuit en finance » (Markowitz, 1952).
+
+### Risque de change
+Pour un investisseur en euros, le rendement d'un actif étranger dépend aussi de l'évolution de sa devise face à l'euro.
+- Exemple : Nvidia +10 %, dollar −5 % face à l'euro → environ +5 % pour toi
+
 ---
 
 ## 4. Lecture de marché

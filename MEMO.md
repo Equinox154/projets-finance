@@ -1,16 +1,16 @@
-\# Mémo technique
+# Mémo technique
 
 
 
-\## Début de session
+## Début de session
 
 
 
 ```
 
-cd $env:USERPROFILE\\projets-finance
+cd $env:USERPROFILEprojets-finance
 
-.\\.venv\\Scripts\\Activate.ps1
+..venvScriptsActivate.ps1
 
 jupyter lab
 
@@ -18,7 +18,7 @@ jupyter lab
 
 
 
-\## Fin de session (sauvegarde)
+## Fin de session (sauvegarde)
 
 
 
@@ -38,19 +38,19 @@ Pas de push = pas de sauvegarde.
 
 
 
-\## Git : commandes utiles
+## Git : commandes utiles
 
 
 
-\- `git status` : voir ce qui a changé / ce qui est prêt à partir
+- `git status` : voir ce qui a changé / ce qui est prêt à partir
 
-\- `git log --oneline` : historique des commits
+- `git log --oneline` : historique des commits
 
-\- `gh repo view --web` : ouvrir le dépôt sur GitHub
+- `gh repo view --web` : ouvrir le dépôt sur GitHub
 
 
 
-\## Récupérer le projet sur un nouveau PC
+## Récupérer le projet sur un nouveau PC
 
 
 
@@ -70,7 +70,7 @@ cd projets-finance
 
 py -m venv .venv
 
-.\\.venv\\Scripts\\Activate.ps1
+..venvScriptsActivate.ps1
 
 python -m pip install -r requirements.txt
 
@@ -78,33 +78,39 @@ python -m pip install -r requirements.txt
 
 
 
-\## Ajouter une bibliothèque
+## Ajouter une bibliothèque
 
 
 
-1\. L'ajouter dans `requirements.txt`
+1. L'ajouter dans `requirements.txt`
 
-2\. `python -m pip install -r requirements.txt`
+2. `python -m pip install -r requirements.txt`
 
-3\. Commit + push
-
-
-
-\## Pièges rencontrés
+3. Commit + push
 
 
 
-\- Après une installation (winget), fermer et rouvrir PowerShell, sinon la commande n'est pas reconnue
+## Pièges rencontrés
 
-\- Ne pas travailler dans un terminal admin (`C:\\Windows\\system32`)
 
-\- Utiliser `py` (hors venv) ou `python` (venv activé), jamais `python` hors venv : conflit Microsoft Store
 
-\- Erreur "exécution de scripts désactivée" : `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
+- Après une installation (winget), fermer et rouvrir PowerShell, sinon la commande n'est pas reconnue
 
-\- Notepad en mode "Formaté" ajoute des `\\` invisibles dans les .md : toujours éditer en mode Syntaxe
+- Ne pas travailler dans un terminal admin (`C:Windowssystem32`)
 
-\- Terminal bloqué sur `>>` : Ctrl + C
+- Utiliser `py` (hors venv) ou `python` (venv activé), jamais `python` hors venv : conflit Microsoft Store
 
-\- Flèche du haut : rappeler la commande précédente
+- Erreur "exécution de scripts désactivée" : `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
+
+- Notepad en mode "Formaté" ajoute des `` invisibles dans les .md : toujours éditer en mode Syntaxe
+
+- Terminal bloqué sur `>>` : Ctrl + C
+
+- Flèche du haut : rappeler la commande précédente
+
+- PowerShell de Jupyter crashé : ne pas fermer l'onglet, relancer Jupyter, Ctrl + S si l'onglet se reconnecte, puis Run → Run All Cells
+
+- Ne jamais ouvrir le même notebook dans deux onglets (risque d'écrasement)
+
+- Notepad : toujours ouvrir les .md en mode Syntaxe
 

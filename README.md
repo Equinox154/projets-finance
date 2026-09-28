@@ -38,9 +38,9 @@ Build a documented, reproducible analytical toolkit: from raw market data to ris
 
 |---|----------|---------|
 
-| 01 | *coming soon* | Market data: returns, volatility, drawdown |
+| 01 | 01-donnees-marche.ipynb | Market data: returns, volatility, drawdown |
 
-| 02 | *coming soon* | Portfolio: diversification, Sharpe ratio, beta |
+| 02 | 02-portefeuille.ipynb *(in progress)* | Portfolio: correlation, diversification, Sharpe ratio, beta |
 
 
 
