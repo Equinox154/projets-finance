@@ -116,6 +116,31 @@ Combiner des actifs peu corrélés pour réduire le risque global sans réduire 
 Pour un investisseur en euros, le rendement d'un actif étranger dépend aussi de l'évolution de sa devise face à l'euro.
 - Exemple : Nvidia +10 %, dollar −5 % face à l'euro → environ +5 % pour toi
 
+### Ratio de Sharpe
+Rendement obtenu par unité de risque, au-delà du taux sans risque.
+- Formule : `(rendement annuel − taux sans risque) / volatilité annuelle`
+- Repères : < 0 mauvais · 0 à 1 correct · > 1 très bon · > 2 exceptionnel (souvent suspect)
+- **À retenir :** permet de comparer deux investissements qui ont des risques différents.
+
+### Taux sans risque
+Rendement d'un placement quasi sans risque (livret, emprunt d'État court). C'est une **hypothèse** qu'on choisit, pas un calcul.
+- **À retenir :** un investissement risqué n'a de valeur que s'il rapporte plus que ce taux.
+
+### Rendement annualisé
+- Code : `rendements.mean() * 252`
+- **À retenir :** le rendement s'annualise × 252, la volatilité × √252.
+
+### Bêta
+Sensibilité d'un titre aux mouvements du marché.
+- Formule : `Cov(titre, marché) / Var(marché)`
+- Code : `rendements["SAN.PA"].cov(marche) / marche.var()`
+- = 1 : suit le marché · > 1 : amplifie (Nvidia 1,34) · < 1 : amortit, titre défensif (Sanofi 0,35)
+- **À retenir :** la volatilité mesure le risque total, le bêta seulement la part liée au marché.
+
+### Covariance et variance
+- **Variance** : volatilité au carré, mesure l'ampleur des mouvements d'une série. Code : `.var()`
+- **Covariance** : mesure si deux séries bougent ensemble, en tenant compte de l'ampleur. Code : `serie_a.cov(serie_b)`
+
 ---
 
 ## 4. Lecture de marché
@@ -124,6 +149,14 @@ Pour un investisseur en euros, le rendement d'un actif étranger dépend aussi d
 Le **consensus** = la moyenne des prévisions des analystes. Le marché réagit à l'écart entre le résultat publié et ce qui était attendu, pas au résultat lui-même.
 - Sanofi, 27/10/2023 : prévisions 2024 en baisse alors que le consensus attendait une hausse → −19 %.
 - **À retenir :** un bon résultat peut faire chuter le cours s'il était moins bon qu'attendu.
+
+### Biais de sélection
+Choisir les titres d'une étude en connaissant déjà leur performance passée. Le résultat paraît excellent, mais il était impossible à obtenir à l'époque.
+- **À retenir :** une performance passée ne dit rien sur la suite.
+
+### Décalage horaire entre places
+Paris ferme à 17h30, New York à 22h. Les mouvements américains de fin de journée n'apparaissent à Paris que le lendemain.
+- **À retenir :** ce décalage fait baisser artificiellement les corrélations et les bêtas calculés en rendements quotidiens.
 
 ---
 
@@ -135,3 +168,25 @@ Le **consensus** = la moyenne des prévisions des analystes. Le marché réagit 
 - `Kernel → Restart Kernel and Run All Cells` : tout relancer dans l'ordre si les résultats deviennent incohérents
 - `NameError` : variable inconnue → kernel redémarré, cellule non exécutée, ou faute de frappe
 - Lire une erreur **de bas en haut** : la dernière ligne donne le diagnostic, la flèche `---->` la ligne fautive
+
+---
+
+## 6. Syntaxe Python
+
+- `rendements["CW8.PA"]` : sélectionner une colonne d'un tableau
+- `marche = rendements["CW8.PA"]` : donner un nom court à une colonne
+- `serie.mean()` → moyenne · `serie.std()` → écart-type · `serie * 252` → multiplie chaque ligne
+- `.iloc[0]` / `.iloc[-1]` : première / dernière valeur d'une série
+- Méthode : `ce_sur_quoi_je_calcule.methode()` ; si elle compare deux séries, la deuxième va entre les parenthèses
+- Python distingue majuscules et minuscules : `print`, pas `Print`
+
+### Boucle for
+Répète les mêmes instructions pour chaque élément d'une liste.
+- La ligne `for` finit par `:`
+- Les lignes répétées sont décalées avec Tab
+- Dans la boucle, la variable (ex. `ticker`) s'utilise sans guillemets : `rendements[ticker]`
+
+### Erreurs fréquentes
+- `IndentationError` : lignes pas décalées sous un `for`
+- `TypeError: missing 1 required positional argument` : il manque un élément entre les parenthèses
+- `AttributeError: 'list' / 'str' object has no attribute` : méthode appliquée à du texte ou à une liste au lieu d'une colonne de données

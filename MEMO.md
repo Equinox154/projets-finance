@@ -5,6 +5,8 @@
 ## Début de session
 
 
+Nouvelle session = kernel vide : Run → Run All Cells pour recharger les variables.
+
 
 ```
 
