@@ -51,6 +51,10 @@ Variation en pourcentage du prix d'un jour à l'autre.
 - Code : `san["Close"].pct_change()`
 - **À retenir :** la première ligne vaut NaN (pas de veille). On compare des **rendements**, jamais des niveaux de prix (un titre à 100 € n'est pas « plus cher » qu'un titre à 10 €).
 
+### Rendements hebdomadaires
+- Code : `portefeuille.resample("W").last().pct_change().dropna()`
+- **À retenir :** pour comparer des places aux horaires différents, l'hebdomadaire évite le biais du décalage horaire (NVDA-CW8 : 0,37 en quotidien, 0,59 en hebdomadaire). Moins d'observations, donc des estimations moins précises.
+
 ---
 
 ## 3. Risque
@@ -137,6 +141,10 @@ Sensibilité d'un titre aux mouvements du marché.
 - = 1 : suit le marché · > 1 : amplifie (Nvidia 1,34) · < 1 : amortit, titre défensif (Sanofi 0,35)
 - **À retenir :** la volatilité mesure le risque total, le bêta seulement la part liée au marché.
 
+### Relation bêta / corrélation
+- bêta = corrélation x (volatilité du titre / volatilité du marché)
+- **À retenir :** quand la corrélation monte, le bêta monte aussi (NVDA : 1,34 en quotidien, 2,14 en hebdomadaire).
+
 ### Covariance et variance
 - **Variance** : volatilité au carré, mesure l'ampleur des mouvements d'une série. Code : `.var()`
 - **Covariance** : mesure si deux séries bougent ensemble, en tenant compte de l'ampleur. Code : `serie_a.cov(serie_b)`
@@ -157,6 +165,11 @@ Choisir les titres d'une étude en connaissant déjà leur performance passée. 
 ### Décalage horaire entre places
 Paris ferme à 17h30, New York à 22h. Les mouvements américains de fin de journée n'apparaissent à Paris que le lendemain.
 - **À retenir :** ce décalage fait baisser artificiellement les corrélations et les bêtas calculés en rendements quotidiens.
+
+### Marge vs croissance
+- **Marge** : bénéfice / chiffre d'affaires de la même année (SMCI 2026 : 2,2 / 39,1 = 5,6 %)
+- **Croissance** : variation d'une année sur l'autre (SMCI : chiffre d'affaires +78 %)
+- **À retenir :** une croissance de 100 % est possible, une marge de 100 % ne l'est pas. Une marge nette proche de 100 % signale un gain exceptionnel.
 
 ---
 
